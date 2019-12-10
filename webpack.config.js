@@ -7,7 +7,9 @@ module.exports = {
 	resolve: {
 		root: __dirname,
 		alias: {
-			Applicant: 'app/components/Applicant.jsx'
+			Applicant: 'app/components/Applicant.jsx',
+			ApplicantList: 'app/components/ApplicantList.jsx'
+
 		},
 		extensions: ['', '.js', '.jsx']
 	},
@@ -26,6 +28,6 @@ module.exports = {
 				loaders: ["style-loader", "css-loader", "sass-loader"]
 			}
 		]
-	} 
-	
+	}
+
 };
