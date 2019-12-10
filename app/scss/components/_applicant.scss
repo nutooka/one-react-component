@@ -1,0 +1,205 @@
+/*-------------------------------------------------------------------------------//
+								APPLICANT
+---------------------------------------------------------------------------------*/
+.applicant {
+	@include flexbox();
+	@include flex-direction(row);
+	width: 100%;
+	@include rem(10,padding);
+	@include rem(20,margin-bottom);
+	background-color: $color-primary-white;
+	@include align-items(center);
+	@include transition(background-color,0.8s,0s); //Transition Out
+	&:hover {
+		background-color: rgba($color-primary-purple, 0.12);
+		cursor: pointer;
+		@include transition(background-color,0.2s,0s); //Transition In
+	}
+}
+
+/*-------------------------------------------------------------------------------//
+								APPLICANT VOTES       
+---------------------------------------------------------------------------------*/
+.applicant__votes {
+	@include circle(40);
+	position: relative;
+	font-family: $font-family-secondary;
+	text-align: center;
+	&:hover .votes__tooltip {
+		visibility: visible;
+		opacity: 1;
+		@include rem(52,top);
+		@include transition(all,0.2s,0.2s)
+	}
+}
+
+.applicant__votes--100 {
+	background-color: $color-per-100;
+	//Trick for pseudo element inheritance
+	  border-color: $color-per-100;
+}
+
+.applicant__votes--80 {
+	background-color: $color-per-80;
+	//Trick for pseudo element inheritance
+	  border-color: $color-per-80;
+}
+
+.applicant__votes--60 {
+	background-color: $color-per-60;
+	//Trick for pseudo element inheritance
+	  border-color: $color-per-60;
+}
+
+.applicant__votes--40 {
+	background-color: $color-per-40;
+	//Trick for pseudo element inheritance
+	  border-color: $color-per-40;
+}
+
+.applicant__votes--20 {
+	background-color: $color-per-20;
+	//Trick for pseudo element inheritance
+	  border-color: $color-per-20;
+}
+
+.applicant__votes--0 {
+	background-color: $color-per-0;
+	//Trick for pseudo element inheritance
+	  border-color: $color-per-0;
+}
+
+.applicant__votes--x {
+	background-color: $color-per-x;
+	//Trick for pseudo element inheritance
+	  border-color: $color-per-x;
+}
+
+/*-------------------------------//
+		VOTES PERCENTAGE
+--------------------------------*/
+
+.votes__percentage {
+	@include circle(40);
+	@include rem(40,line-height);
+
+}
+
+/*-------------------------------//
+		VOTES TOOLTIP
+--------------------------------*/
+
+.votes__tooltip {
+	@include rem(72,top);
+	@include rectangle-arrow(inherit,20,8,10);
+}
+
+.votes-tooltip__data {
+	margin: 0;
+	font-family: inherit;
+}
+
+.data__title {
+	display: block;
+}
+
+.data__title--with-margin {
+	@include rem(5,margin-bottom);
+}
+.data__title--no-margin {
+	margin-bottom: 0;
+}
+
+.data__text {
+	@include rem(12,font-size);
+	text-transform: uppercase;
+	color: rgba($color-primary-white, 0.75);
+}
+
+.data__text--show {
+	display: block;
+}
+
+.data__text--hide {
+	display: none;
+}
+
+/*-------------------------------------------------------------------------------//
+								APPLICANT PERSON
+---------------------------------------------------------------------------------*/
+
+.applicant__person {
+	@include flexbox();
+	@include flex-direction(row);
+	width: 100%;
+	@include align-items(center);
+	position: relative;
+}
+
+/*-------------------------------//
+		PERSON IMG
+--------------------------------*/
+
+.person__img {
+	@include circle(40);
+	position: relative;
+	@include rem(-5,left);
+	background-color: grey;
+	color: grey;
+	overflow: hidden;
+}
+
+.person-img__img {
+	width: 100%;
+	height: auto;
+}
+
+/*-------------------------------//
+		PERSON STATUS
+--------------------------------*/
+
+.person__status {
+	position: absolute;
+	@include circle(12);
+	bottom: 0;
+	@include rem(24,left); 
+	display: none;
+	&:hover .person-status__tooltip {
+		visibility: visible;
+		opacity: 1;
+		@include rem(23,top);
+		@include transition(all,0.2s,0.2s)
+	}
+}
+
+.person__status--unseen {
+	display: block;
+	background-color: $color-primary-blue;
+	//Trick for pseudo element inheritance
+		border-color: $color-primary-blue;
+}
+
+.person-status__tooltip {
+	@include rem(43,top);
+	@include rem(16,font-size);
+	@include rectangle-arrow(inherit,20,8,10);
+	text-transform: capitalize;
+}
+
+/*-------------------------------//
+		PERSON NAME
+--------------------------------*/
+
+.person__name {
+	@include flex-grow(1);
+	@include rem(10,padding-top);
+	@include rem(10,padding-bottom);
+	color: rgba($color-primary-purple, 0.75);
+	@include rem(5,margin-left);
+	font-family: $font-family-primary;
+	text-transform: capitalize;
+	@include rem(16,font-size);
+	&:hover {
+		color: rgba($color-primary-purple, 1);
+	}
+}

@@ -1,0 +1,176 @@
+/*-------------------------------------------------------------------------------//
+								VENDOR PREFIXES
+---------------------------------------------------------------------------------*/
+/*-------------------------------//
+		FLEXBOX
+--------------------------------*/
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; 
+          box-sizing: $box-model;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-direction($direction) {
+	@if $direction == "row" or  $direction == "column" {
+		-webkit-box-direction: normal;
+	} @else {
+		-webkit-box-direction: reverse;
+	}
+	@if $direction == "row" {
+		-webkit-box-orient: horizontal;
+	} else {
+		-webkit-box-orient: vertical;
+	}	
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin flex-grow($grow) {
+  -webkit-box-flex: $grow;
+  -ms-flex-positive: $grow;
+  flex-grow: $grow;
+}
+
+@mixin align-items($where) {
+	-webkit-box-align: $where;
+	-ms-flex-align: $where;
+	align-items: $where;
+}
+
+/*-------------------------------//
+		TRANSFORM
+--------------------------------*/
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-ms-transform: $transform;
+	transform: $transform;
+}
+
+@mixin translateX($x) {
+	@include transform(translateX($x));
+}
+
+/*-------------------------------//
+		TRANSITION
+--------------------------------*/
+
+@mixin transition($property, $time, $delay) {
+	-webkit-transition: $property $time $delay;
+	-o-transition: $property $time $delay;
+	transition: $property $time $delay;
+}
+
+/*-------------------------------------------------------------------------------//
+								PSEUDO ELEMENTS
+---------------------------------------------------------------------------------*/
+
+@mixin pseudo($content: '', $display: block, $position: absolute) {
+    content: $content;
+    display: $display;
+    position: $position;
+}
+
+
+/*-------------------------------------------------------------------------------//
+								CREATE SHAPES
+---------------------------------------------------------------------------------*/
+/*-------------------------------//
+		CIRCLE
+--------------------------------*/
+@mixin circle($pixel) {
+  @include rem($pixel,width);
+  @include rem($pixel,height);
+  border-radius: 100%;
+}
+
+/*-------------------------------//
+		RECTANGLE
+--------------------------------*/
+@mixin rectangle($padding, $color) {
+  @include rem($padding,padding);
+  background-color: $color;
+  //Trick for pseudo element inheritance
+	  border-color: $color;
+
+}
+
+/*-------------------------------//
+		TRIANGLE
+--------------------------------*/
+@mixin triangle($border-right-left, $border-bottom, $color) { 
+	width: 0;
+	height: 0;
+	@include rem($border-right-left,border-left-width);
+	border-left-style: solid;
+	border-left-color: transparent;
+	
+	@include rem($border-right-left,border-right-width);
+	border-right-style: solid;
+	border-right-color: transparent;
+	
+	@include rem($border-bottom,border-bottom-width);
+	border-bottom-style: solid;
+	border-bottom-color: $color;
+}
+
+/*-------------------------------//
+  RECTANGLE + TRIANGLE = TOOLTIP
+--------------------------------*/
+@mixin rectangle-arrow($color, $rec-padding, $tri-bord-left-right, $tri-bord-bottom) {
+	position: absolute;
+	@include rectangle($rec-padding, $color);
+	left: 50%;
+	@include translateX(-50%);
+	@include transition(all,0.2s,0.2s);
+	opacity: 0;
+	visibility: hidden;
+	z-index: 2;
+	pointer-events: none;
+	&:after {
+		@include pseudo();
+		@include triangle($tri-bord-left-right,$tri-bord-bottom,$color);
+		@include rem(-$tri-bord-bottom,top);
+		left: 50%;
+		@include translateX(-50%);
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------------//
+								MEDIA QUERIES
+---------------------------------------------------------------------------------*/
+@mixin media-type($media) {
+    @media only screen and #{$media} {
+        @content;
+    }
+}
+
+/*-------------------------------------------------------------------------------//
+								CALC PX TO REM 
+---------------------------------------------------------------------------------*/
+
+@mixin rem($px-size, $property) {
+  #{$property}: calc-rem($px-size);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

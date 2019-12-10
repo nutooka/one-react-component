@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+
+/*-------------------------------------------------------------------------------//
+								FONT BASE
+---------------------------------------------------------------------------------*/
+$font-family-primary: 'Open Sans Regular', sans-serif;
+$font-family-secondary: 'Open Sans Semibold', sans-serif;
+$font-size-browser: 62.5%;
+
+
+
+
+/*-------------------------------------------------------------------------------//
+								COLOR BASE
+---------------------------------------------------------------------------------*/
+/*-------------------------------//
+		BASE
+--------------------------------*/
+$color-primary-purple: #241F33;
+$color-primary-blue: #3B98DB;
+$color-primary-green: #7CC144;
+$color-primary-yellow: #FFB644;
+$color-primary-white: #FFFFFF;
+
+
+/*-------------------------------//
+		PERCENTAGE
+--------------------------------*/
+$color-per-100: $color-primary-green;
+$color-per-80: #96BF44;
+$color-per-60: #B0BC44;
+$color-per-40: #CBBA44;
+$color-per-20: #E5B844;
+$color-per-0: $color-primary-yellow;
+$color-per-x: $color-primary-purple;
+
+
+/*-------------------------------------------------------------------------------//
+								MEDIA QUERIES
+---------------------------------------------------------------------------------*/
+$phone : '(max-width: 480px)';
+$tablet: '(min-width: 479px) and (max-width: 767px)';
+$desktop: '(min-width: 768px)';
