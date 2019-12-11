@@ -1,9 +1,10 @@
 {
-  "name": "indivizo",
+  "name": "task",
   "version": "1.0.0",
   "description": "react and sass app",
   "main": "app.jsx",
   "scripts": {
+    "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fülöp Beáta",
@@ -11,8 +12,9 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "express": "^4.15.4",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "prop-types": "^15.7.2",
+    "react": "^0.14.9",
+    "react-dom": "^0.14.9"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",

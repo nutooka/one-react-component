@@ -1,11 +1,12 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ApplicantList = require('ApplicantList');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const ApplicantList = require('ApplicantList');
+
 require("./scss/main.scss");
 
 ReactDOM.render(
 	<div>
-		<ApplicantList/>
+		<ApplicantList />
 	</div>,
 	document.getElementById('app')
 );

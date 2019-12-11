@@ -1,3 +1,7 @@
+# Run
+1. Build: npm run build
+2. Start server: npm run start
+
 # Indivizo Frontend Exercise
 Hey!
 
