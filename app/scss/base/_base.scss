@@ -1,0 +1,21 @@
+/*-------------------------------------------------------------------------------//
+								BASE RESET
+---------------------------------------------------------------------------------*/
+html {
+  @include box-sizing(border-box);
+  font-size: $font-size-browser; // 1rem = 10px
+}
+*, *:after, *:before {
+  @include box-sizing(inherit);
+}
+
+body {
+  padding:0;
+  margin: 0;
+  font-family: $font-family-primary;
+  @include rem(14,font-size);
+  color: $color-primary-white;
+  background-color: $color-primary-white;
+}
+
+

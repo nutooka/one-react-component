@@ -1,0 +1,29 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "react and sass app",
+  "main": "app.jsx",
+  "scripts": {
+    "build": "webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fülöp Beáta",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "express": "^4.15.4",
+    "prop-types": "^15.7.2",
+    "react": "^0.14.9",
+    "react-dom": "^0.14.9"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.24.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.15.0"
+  }
+}
